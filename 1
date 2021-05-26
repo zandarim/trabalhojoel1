@@ -1,0 +1,64 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+void removerNL(char *c) {
+ c[strlen(c) - 1] = 0;
+}int main() {
+ printf("Nome do Cliente: ");
+ char nome[50];
+ fgets(nome, 50, stdin);
+ removerNL(nome);
+
+ printf("\nData de Nascimento (somente numeros): ");
+ char data[10];
+ fgets(data, 10, stdin);
+ removerNL(data);
+ printf("\nPlanetaridade: ");
+ char planetaridade[50];
+ fgets(planetaridade, 50, stdin);
+ removerNL(planetaridade);
+
+ printf("\nUtiliza alguma droga (Qual?): ");
+ char droga[15];
+ fgets(droga, 15, stdin);
+ removerNL(droga);
+ 
+ printf("\nAceita racao? (sim/nao) ");
+ char racao[5];
+ fgets(racao, 5, stdin);
+ removerNL(racao);
+ 
+ printf("\nCondutor de nave habilitado? (sim/nao): ");
+ char habilitado[5];
+ fgets(habilitado, 10, stdin);
+ removerNL(habilitado);
+
+ printf("\nCadastro CSS (somente 10 numeros): ");
+ char numero_css[10];
+ fgets(numero_css, 10, stdin);
+ removerNL(numero_css);
+ printf("\nNumero da CNH (somente numeros): ");
+ char cnh[20];
+ fgets(cnh, 20, stdin);
+ removerNL(cnh);
+ printf("\nFinalizar Cadastro");
+ printf("\n1 - Salvar");
+ printf("\n2 - Cancelar\n");
+ char sopcao[5];
+ fgets(sopcao, 5, stdin);
+ removerNL(sopcao);
+ int opcao = atoi(sopcao);
+ if (opcao == 1) {
+ printf("Cadastro realizado com sucesso!\n");
+ } else if (opcao == 2) {
+ printf("Cadastro cancelado.\n");
+ } else {
+ printf("Opcao desconhecida %d.\n", opcao);
+ }
+ printf("Nome: %s\n", nome);
+ printf("Planetaridade: %s\n", planetaridade);
+ printf("Cadastro CSS: %s\n", numero_css);
+ printf("Data de Nascimento: %s\n", data);
+ printf("CNH: %s\n", cnh);
+
+}
